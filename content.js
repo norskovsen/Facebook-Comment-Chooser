@@ -1,10 +1,8 @@
 chrome.runtime.onMessage.addListener(receiver);
-console.log('Content script loaded');
 
 function receiver(request, sender, sendResponse) {
   if (request.message === "user clicked!") {
       loadComments();
-      console.log('Button clicked');
   }
 }
 
@@ -31,7 +29,6 @@ function chooseComment(){
 
 function removePrevious(){
     let preChosenComment = document.getElementById('chosenComment');
-    console.log(preChosenComment);
     if(preChosenComment){
 	preChosenComment.style.backgroundColor = "";
 	preChosenComment.id = "";
